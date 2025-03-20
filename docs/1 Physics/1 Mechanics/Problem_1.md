@@ -32,8 +32,8 @@ Below is a **graph** illustrating how the projectile range varies with the launc
 
 ## **Further Exploration**
 Future studies and simulations could consider:
-- 🌍 **Air Resistance:** The influence of drag on real-world motion.
-- 🏔️ **Uneven Terrain:** Effects of launching from different heights.
-- 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
+$$ - 🌍 **Air Resistance:** The influence of drag on real-world motion. $$
+$$ - 🏔️ **Uneven Terrain:** Effects of launching from different heights. $$
+$$ - 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**. $$
 
 📌 **Built with MkDocs** using a theme provided by *Read the Docs*.
