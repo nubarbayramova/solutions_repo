@@ -11,30 +11,29 @@ R = \frac{v_0^2 \sin(2\theta)}{g}
 \]
 
 where:
-- \( v_0 \) is the initial velocity (m/s),
-- \( \theta \) is the launch angle (degrees),
-- \( g \) is the acceleration due to gravity (m/s²).
+- **\( v_0 \)**: Initial velocity (m/s)
+- **\( \theta \)**: Launch angle (degrees)
+- **\( g \)**: Acceleration due to gravity (m/s²)
 
 ---
 
 ## **Graphical Representation**
+Below is a **graph** illustrating how the projectile range varies with the launch angle for different initial velocities:
 
-Below is a **graph** showing how the projectile range varies with the launch angle for different initial velocities:
+![Projectile Range Graph](sandbox:/mnt/data/projectile_range_graph.png)
 
-![Projectile Range Graph](/docs/_pics/projectile_range_graph.png)
-
-**Key Observations:**
-- **Maximum Range at 45°**: The projectile reaches its farthest distance when launched at this angle.
-- **Symmetry**: The same range is obtained for **two complementary angles** (e.g., 30° and 60°).
-- **Higher Initial Velocity = Greater Range**: Increasing \( v_0 \) extends the projectile's reach.
-- **Higher Gravity = Shorter Range**: If \( g \) increases (e.g., on Jupiter), the projectile doesn't travel as far.
+### 🔹 **Key Observations**
+📌 **Maximum Range at 45°** → The projectile reaches its farthest distance when launched at this angle.  
+📌 **Symmetry in Motion** → Two complementary angles (e.g., 30° and 60°) yield the same range.  
+📌 **Effect of Initial Velocity** → Increasing \( v_0 \) results in a greater range.  
+📌 **Effect of Gravity** → A higher gravitational force (e.g., on Jupiter) shortens the projectile's range.
 
 ---
 
 ## **Further Exploration**
-To enhance realism, future improvements could include:
-✅ **Air Resistance**: Drag forces affect real-world motion.
-✅ **Uneven Terrain**: Launching from different heights changes the range.
-✅ **Different Gravity Environments**: Comparing projectile motion on the Moon vs. Earth vs. Mars.
+Future studies and simulations could consider:
+- 🌍 **Air Resistance:** The influence of drag on real-world motion.
+- 🏔️ **Uneven Terrain:** Effects of launching from different heights.
+- 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
 
 📌 **Built with MkDocs** using a theme provided by *Read the Docs*.
