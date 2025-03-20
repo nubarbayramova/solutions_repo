@@ -1,6 +1,26 @@
 # Problem 1
- 
- import numpy as np
+
+## Introduction
+Projectile motion is a fundamental concept in mechanics. In this problem, we analyze how the **range** of a projectile depends on the **angle of projection**. 
+
+## Governing Equation
+The range \( R \) of a projectile launched with an initial velocity \( v_0 \) at an angle \( \theta \) (with respect to the horizontal) is given by:
+
+\[
+R = \frac{v_0^2 \sin(2\theta)}{g}
+\]
+
+where:
+- \( v_0 \) is the initial velocity (m/s),
+- \( \theta \) is the launch angle (degrees),
+- \( g \) is the acceleration due to gravity (m/s²).
+
+---
+
+## **Python Implementation**
+
+```python
+import numpy as np
 import matplotlib.pyplot as plt
 
 def projectile_range(v0, theta, g=9.81):
@@ -32,3 +52,22 @@ plt.title('Projectile Range as a Function of Launch Angle')
 plt.legend()
 plt.grid()
 plt.show()
+```
+
+---
+
+## **Observations**
+- The maximum range occurs at **45°**.
+- The same range is achieved for two complementary angles (e.g., 30° and 60°).
+- Increasing **initial velocity** increases the range.
+- Increasing **gravity** decreases the range.
+
+### **Next Steps**
+For a more realistic simulation, consider adding:
+✅ **Air resistance** (drag force)
+✅ **Uneven terrain**
+✅ **Variable gravity (e.g., Moon vs. Earth vs. Mars)**
+
+---
+
+📌 **Built with MkDocs** using a theme provided by *Read the Docs*.
