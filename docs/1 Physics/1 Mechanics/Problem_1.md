@@ -20,7 +20,7 @@ where:
 ## **Graphical Representation**
 Below is a **graph** illustrating how the projectile range varies with the launch angle for different initial velocities:
 
-![Projectile Range Graph](sandbox:/mnt/data/projectile_range_graph.png)
+![Projectile Range Graph](/docs/_pics/projectile_range_graph.png)
 
 ### 🔹 **Key Observations**
 📌 **Maximum Range at 45°** → The projectile reaches its farthest distance when launched at this angle.  
@@ -31,9 +31,7 @@ Below is a **graph** illustrating how the projectile range varies with the launc
 ---
 
 ## **Further Exploration**
-Future studies and simulations could consider:
+Future studies and simulations could consider: $$
 $$ - 🌍 **Air Resistance:** The influence of drag on real-world motion. $$
 $$ - 🏔️ **Uneven Terrain:** Effects of launching from different heights. $$
-$$ - 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**. $$
-
-📌 **Built with MkDocs** using a theme provided by *Read the Docs*.
+$$ - 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
