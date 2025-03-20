@@ -1,37 +1,75 @@
-# Problem 1: Projectile Motion Analysis
+# Problem 1
 
 ## Introduction
-Projectile motion is a key concept in mechanics that explains how objects move through the air when launched. This study explores how the **range** (horizontal distance) of a projectile depends on the **angle of projection**.
+Projectile motion is a fundamental concept in mechanics. In this problem, we analyze how the **range** of a projectile depends on the **angle of projection**. 
 
 ## Governing Equation
-The range \( R \) of a projectile launched with an initial velocity \( v_0 \) at an angle \( \theta \) is given by:
+The range $R$ of a projectile launched with an initial velocity $v_0$ at an angle $θ$ (with respect to the horizontal) is given by:
 
-\[
+$$
 R = \frac{v_0^2 \sin(2\theta)}{g}
-\]
+$$
 
 where:
-- **\( v_0 \)**: Initial velocity (m/s)
-- **\( \theta \)**: Launch angle (degrees)
-- **\( g \)**: Acceleration due to gravity (m/s²)
+
+- $v_0$ is the initial velocity (m/s),
+- $θ$ is the launch angle (degrees),
+- $g$  is the acceleration due to gravity (m/s²).
 
 ---
 
-## **Graphical Representation**
-Below is a **graph** illustrating how the projectile range varies with the launch angle for different initial velocities:
+## **Python Implementation**
 
-![Projectile Range Graph](/docs/_pics/projectile_range_graph.png)
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 
-### 🔹 **Key Observations**
-📌 **Maximum Range at 45°** → The projectile reaches its farthest distance when launched at this angle.  
-📌 **Symmetry in Motion** → Two complementary angles (e.g., 30° and 60°) yield the same range.  
-📌 **Effect of Initial Velocity** → Increasing \( v_0 \) results in a greater range.  
-📌 **Effect of Gravity** → A higher gravitational force (e.g., on Jupiter) shortens the projectile's range.
+def projectile_range(v0, theta, g=9.81):
+    """
+    Computes the range of a projectile given initial velocity and launch angle.
+    :param v0: Initial velocity (m/s)
+    :param theta: Launch angle (degrees)
+    :param g: Acceleration due to gravity (m/s^2), default is Earth's gravity
+    :return: Range of the projectile (meters)
+    """
+    theta_rad = np.radians(theta)  # Convert angle to radians
+    return (v0**2 * np.sin(2 * theta_rad)) / g
 
+# Simulation parameters
+angles = np.linspace(0, 90, 100)  # Angles from 0 to 90 degrees
+initial_velocities = [10, 20, 30]  # Different initial velocities
+
+g = 9.81  # Gravity (m/s^2)
+
+# Plot range vs. angle for different velocities
+plt.figure(figsize=(8, 6))
+for v0 in initial_velocities:
+    ranges = [projectile_range(v0, theta, g) for theta in angles]
+    plt.plot(angles, ranges, label=f'v0 = {v0} m/s')
+
+plt.xlabel('Launch Angle (degrees)')
+plt.ylabel('Range (meters)')
+plt.title('Projectile Range as a Function of Launch Angle')
+plt.legend()
+plt.grid()
+plt.show()
+```
+![alt text](/docs/_pics/projectile_range_graph.png)
 ---
 
-## **Further Exploration**
-Future studies and simulations could consider: $$
-$$ - 🌍 **Air Resistance:** The influence of drag on real-world motion. $$
-$$ - 🏔️ **Uneven Terrain:** Effects of launching from different heights. $$
-$$ - 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
+## **Observations**
+- The maximum range occurs at **45°**.
+- The same range is achieved for two complementary angles (e.g., $30°$ and $60°$).
+- Increasing **initial velocity** increases the range.
+- Increasing **gravity** decreases the range.
+
+### **Next Steps**
+For a more realistic simulation, consider adding:
+
+✅ **Air resistance** (drag force)
+
+✅ **Uneven terrain**
+
+✅ **Variable gravity (e.g., Moon vs. Earth vs. Mars)**
+
+
