@@ -1,42 +1,3 @@
-# Problem 1
-
-## Introduction
-Projectile motion is a fundamental concept in mechanics. In this problem, we analyze how the **range** of a projectile depends on the **angle of projection**. 
-
-## Governing Equation
-The range \( R \) of a projectile launched with an initial velocity \( v_0 \) at an angle \( \theta \) (with respect to the horizontal) is given by:
-
-\[
-R = \frac{v_0^2 \sin(2\theta)}{g}
-\]
-
-where:
-- \( v_0 \) is the initial velocity (m/s),
-- \( \theta \) is the launch angle (degrees),
-- \( g \) is the acceleration due to gravity (m/s²).
-
-## **Graphical Representation**
-
-Below is a **graph** showing how the projectile range varies with the launch angle for different initial velocities:
-
-![Projectile Range Graph](/docs/_pics/projectile_range_graph.png)
-
-## **Observations**
-- The maximum range occurs at **45°**.
-- The same range is achieved for two complementary angles (e.g., 30° and 60°).
-- Increasing **initial velocity** increases the range.
-- Increasing **gravity** decreases the range.
-
-### **Next Steps**
-For a more realistic simulation, consider adding:
-✅ **Air resistance** (drag force)
-✅ **Uneven terrain**
-✅ **Variable gravity (e.g., Moon vs. Earth vs. Mars)**
-
----
-
-📌 **Built with MkDocs** using a theme provided by *Read the Docs*.
-
 # Problem 1: Projectile Motion Analysis
 
 ## Introduction
@@ -56,7 +17,11 @@ where:
 
 ---
 
+## **Graphical Representation**
 
+Below is a **graph** showing how the projectile range varies with the launch angle for different initial velocities:
+
+![Projectile Range Graph](/docs/_pics/projectile_range_graph.png)
 
 **Key Observations:**
 - **Maximum Range at 45°**: The projectile reaches its farthest distance when launched at this angle.
