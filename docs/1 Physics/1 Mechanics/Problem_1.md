@@ -54,7 +54,7 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
-![alt text](/docs/_pics/projectile_range_graph.png)
+![alt text](projectile_range_graph.png)
 ---
 
 ## **Observations**
