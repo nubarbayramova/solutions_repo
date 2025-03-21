@@ -63,13 +63,11 @@ plt.show()
 - Increasing **initial velocity** increases the range.
 - Increasing **gravity** decreases the range.
 
-### **Next Steps**
-For a more realistic simulation, consider adding:
 
-✅ **Air resistance** (drag force)
-
-✅ **Uneven terrain**
-
-✅ **Variable gravity (e.g., Moon vs. Earth vs. Mars)**
+## **Further Exploration**
+Future studies and simulations could consider:
+- 🌍 **Air Resistance:** The influence of drag on real-world motion.
+- 🏔️ **Uneven Terrain:** Effects of launching from different heights.
+- 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
 
 
