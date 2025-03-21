@@ -65,8 +65,11 @@ plt.show()
 
 ## 🌍 **Real-World Applications**
 Projectile motion isn't just theoretical—we experience it in our daily lives:
+
 - **Sports:** Kicking a football, throwing a javelin
+
 - **Engineering:** Launching rockets or artillery
+
 - **Science:** Simulating motion on Earth, Moon, or Mars
 
 
@@ -88,8 +91,11 @@ Projectile motion is commonly observed in sports, especially football. When a pl
 
 ## **Further Exploration**
 Future studies and simulations could consider:
+
 - 🌍 **Air Resistance:** The influence of drag on real-world motion.
+
 - 🏔️ **Uneven Terrain:** Effects of launching from different heights.
+
 - 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
 
 
