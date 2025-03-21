@@ -172,6 +172,177 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<h2 id="introduction">📌 Introduction</h2>
+<p>The <strong>forced damped pendulum</strong> is a fundamental system in physics and engineering that demonstrates a transition from <strong>simple harmonic motion</strong> to <strong>resonance and chaos</strong> due to the interplay of damping, restoring forces, and external periodic forcing. This study helps us understand complex real-world applications, including <strong>energy harvesting, vibration isolation, and mechanical resonance.</strong></p>
+<h2 id="1-theoretical-foundation">🧑‍🏫 <strong>1. Theoretical Foundation</strong></h2>
+<h3 id="governing-equation">🔹 Governing Equation</h3>
+<p>The motion of a <strong>forced damped pendulum</strong> is described by the following <strong>differential equation</strong>:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)
+\]</div>
+<p>where:</p>
+<ul>
+<li>
+<p><strong><span class="arithmatex">\(θ\)</span></strong> → Angular displacement (radians)</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(b\)</span></strong> → Damping coefficient (controls energy loss)</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(g\)</span></strong> → Gravitational acceleration</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(L\)</span></strong> → Length of the pendulum</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(A\)</span></strong> → Amplitude of the external driving force</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(Ω\)</span></strong> → Frequency of the external force</p>
+</li>
+</ul>
+<h3 id="small-angle-approximation">🔹 Small-Angle Approximation</h3>
+<p>For <strong>small oscillations</strong>, we approximate <strong><span class="arithmatex">\(\sin\theta \approx \theta\)</span></strong>, simplifying the equation to:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
+\]</div>
+<p>This is a <strong>linear equation</strong>, and its solution describes <strong>harmonic oscillations</strong>.</p>
+<h3 id="resonance-conditions">🔹 Resonance Conditions</h3>
+<ul>
+<li>
+<p>When the driving frequency <strong><span class="arithmatex">\(Ω\)</span></strong> matches the system's natural frequency:
+  $$
+  \omega_0 = \sqrt{\frac{g}{L}}
+  $$
+  resonance occurs, leading to <strong>maximum oscillations</strong>.</p>
+</li>
+<li>
+<p>At high amplitudes, the system can enter <strong>chaotic motion</strong>.</p>
+</li>
+</ul>
+<h2 id="2-analysis-of-dynamics">🔬 <strong>2. Analysis of Dynamics</strong></h2>
+<h3 id="key-parameters-affecting-motion">🔹 Key Parameters Affecting Motion</h3>
+<ol>
+<li>
+<p><strong>Damping coefficient <span class="arithmatex">\(b\)</span></strong>: Higher damping reduces oscillations and suppresses chaos.</p>
+</li>
+<li>
+<p><strong>Driving force amplitude <span class="arithmatex">\(A\)</span></strong>: Large values introduce nonlinear behavior and chaos.</p>
+</li>
+<li>
+<p><strong>Driving frequency <span class="arithmatex">\(Ω\)</span></strong>: Affects resonance and synchronization.</p>
+</li>
+</ol>
+<h3 id="regular-vs-chaotic-motion">🔹 Regular vs. Chaotic Motion</h3>
+<ul>
+<li>
+<p><strong>Low damping &amp; weak forcing</strong> → <strong>Periodic oscillations</strong> (predictable motion).</p>
+</li>
+<li>
+<p><strong>Moderate forcing</strong> → <strong>Resonance</strong> (large oscillations at specific frequencies).</p>
+</li>
+<li>
+<p><strong>High forcing &amp; nonlinearity</strong> → <strong>Chaos</strong> (unpredictable motion with extreme sensitivity to initial conditions).</p>
+</li>
+</ul>
+<h2 id="3-real-world-applications">🌍 <strong>3. Real-World Applications</strong></h2>
+<h3 id="common-uses-of-forced-damped-pendulums">Common Uses of Forced Damped Pendulums</h3>
+<ul>
+<li>
+<p><strong>🏗️ Suspension Bridges</strong> → Studying oscillations in structures.</p>
+</li>
+<li>
+<p><strong>🔋 Energy Harvesting</strong> → Using vibrations to generate electricity.</p>
+</li>
+<li>
+<p><strong>⚡ Oscillating Circuits</strong> → Analogous to driven <strong>RLC circuits</strong>.</p>
+</li>
+</ul>
+<h3 id="real-world-example-a-playground-swing"><strong>Real-World Example: A Playground Swing</strong></h3>
+<p>A <strong>swing</strong> acts as a forced damped pendulum:</p>
+<p><img alt="Playground Swing Motion" src="../swing.webp"/></p>
+<ul>
+<li>
+<p>The child’s motion adds an <strong>external periodic force</strong>.</p>
+</li>
+<li>
+<p>If pushing is <strong>in sync</strong> with the swing’s natural frequency → <strong>Resonance occurs</strong> (higher amplitude).</p>
+</li>
+<li>
+<p>If air resistance &amp; friction increase → <strong>Damping reduces motion</strong>.</p>
+</li>
+<li>
+<p>Random pushing at different times can lead to <strong>chaotic motion</strong>.</p>
+</li>
+</ul>
+<h2 id="4-computational-implementation">🖥️ <strong>4. Computational Implementation</strong></h2>
+<p>We develop a <strong>Python simulation</strong> to:</p>
+<ul>
+<li>
+<p>Numerically <strong>solve the differential equation</strong>.</p>
+</li>
+<li>
+<p><strong>Visualize</strong> pendulum motion for different damping and forcing.</p>
+</li>
+<li>
+<p>Generate <strong>phase diagrams</strong> and <strong>Poincaré sections</strong> to illustrate chaotic transitions.</p>
+</li>
+</ul>
+<h3 id="python-script">🔹 <strong>Python Script</strong></h3>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Define the forced damped pendulum equation
+def forced_damped_pendulum(t, y, b, g, L, A, omega):
+    theta, omega_dot = y
+    dtheta_dt = omega_dot
+    domega_dt = -b * omega_dot - (g / L) * np.sin(theta) + A * np.cos(omega * t)
+    return [dtheta_dt, domega_dt]
+
+# Parameters
+b = 0.5        # Damping coefficient
+g = 9.81       # Gravity (m/s^2)
+L = 1.0        # Length of the pendulum (m)
+A = 1.2        # Driving force amplitude
+omega_drive = 2.0  # Driving frequency
+
+# Initial conditions
+theta_0 = 0.2  # Initial angle (radians)
+omega_0 = 0.0  # Initial angular velocity
+
+# Time span
+t_span = (0, 20)  # Simulate for 20 seconds
+t_eval = np.linspace(*t_span, 1000)
+
+# Solve the equation
+sol = solve_ivp(forced_damped_pendulum, t_span, [theta_0, omega_0], t_eval=t_eval, args=(b, g, L, A, omega_drive))
+
+# Plot results
+plt.figure(figsize=(8, 5))
+plt.plot(sol.t, sol.y[0], label='Theta (Angular Displacement)', color='b')
+plt.xlabel('Time (s)')
+plt.ylabel('Angular Displacement (radians)')
+plt.title('Forced Damped Pendulum Motion')
+plt.legend()
+plt.grid()
+
+plt.show()
+</code></pre>
+<p><img alt="Forced Damped Pendulum Motion" src="../Unknown.png"/></p>
+<p>This graph shows how the angular displacement of the pendulum changes over time under damping and periodic forcing.</p>
+<h3 id="expected-additional-plots">Expected Additional Plots:</h3>
+<ul>
+<li>
+<p><strong>Phase portraits</strong> to visualize stability and chaos.</p>
+</li>
+<li>
+<p><strong>Bifurcation diagrams</strong> to show changes in periodicity.</p>
+</li>
+</ul>
+<h2 id="conclusion">📌 <strong>Conclusion</strong></h2>
+<p>The forced damped pendulum is a rich model for exploring <strong>chaotic dynamics, resonance, and real-world oscillations</strong>. By analyzing its behavior, we gain insights into <strong>engineering, physics, and even biological rhythms</strong>.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
