@@ -172,6 +172,87 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="keplers-third-law-orbital-period-and-radius">🌌 Kepler's Third Law: Orbital Period and Radius</h1>
+<blockquote>
+<p>"The harmony of the world is made manifest in the laws of nature." – Kepler</p>
+</blockquote>
+<h2 id="what-are-we-exploring">⚙️ What Are We Exploring?</h2>
+<p>We aim to understand how a planet or satellite’s <strong>orbital period</strong> (how long it takes to complete an orbit) is related to its <strong>distance from the central body</strong>.</p>
+<p>This brings us to <strong>Kepler’s Third Law</strong>:</p>
+<div class="arithmatex">\[
+T^2 \propto r^3
+\]</div>
+<p>Where:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(T\)</span> = Orbital period</p>
+</li>
+<li>
+<p><span class="arithmatex">\(r\)</span> = Orbital radius</p>
+</li>
+</ul>
+<h2 id="the-physics-behind-it">📐 The Physics Behind It</h2>
+<p>We start from two fundamental physics principles:</p>
+<ul>
+<li>
+<p>Newton’s Law of Gravitation:
+  $$
+  F = \frac{G M m}{r^2}
+$$</p>
+</li>
+<li>
+<p>Centripetal force needed to keep an object in circular motion:
+  $$
+  F = \frac{m v^2}{r}
+  $$</p>
+</li>
+</ul>
+<p>Setting them equal, and working through the math (see full derivation in notebook), we arrive at:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2}{GM} r^3
+\]</div>
+<p>This shows that for <strong>circular orbits</strong>, the square of the orbital period is proportional to the cube of the radius.</p>
+<h2 id="real-world-example-the-moon-earth">🌍 Real-World Example: The Moon &amp; Earth</h2>
+<p>By measuring:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(T\)</span> (orbital period ≈ 27.3 days)</p>
+</li>
+<li>
+<p><span class="arithmatex">\(r\)</span> (distance from Earth to Moon ≈ 384,400 km)</p>
+</li>
+</ul>
+<p>we can apply Kepler’s Law to calculate <strong>Earth’s mass — or vice versa</strong>, confirm these values based on known mass.</p>
+<p><img alt="Moon and Earth" src="../0ab39355-e3a7-44df-91a0-ff67c0029d14.webp"/></p>
+<h2 id="visual-verification">📊 Visual Verification</h2>
+<p>We ran a Python simulation to compute and plot <span class="arithmatex">\(T^2\)</span> and <span class="arithmatex">\(r^3\)</span> values for circular orbits around Earth.</p>
+<p>Below is the graph showing this relationship:</p>
+<p><img alt="Kepler T2 vs R3 Plot" src="../kepler_t2_vs_r3_plot.png"/></p>
+<p>As expected, the relationship is <strong>linear</strong>, confirming Kepler's Third Law in action.</p>
+<h2 id="why-does-this-matter">Why Does This Matter?</h2>
+<ul>
+<li>
+<p>Helps <strong>design satellite orbits</strong> (e.g., GPS, Starlink)</p>
+</li>
+<li>
+<p>Enables <strong>planetary exploration</strong> by predicting orbital paths</p>
+</li>
+<li>
+<p>Essential for <strong>calculating masses</strong> of planets and stars</p>
+</li>
+</ul>
+<h2 id="what-about-elliptical-orbits">What About Elliptical Orbits?</h2>
+<p>Kepler’s Law also applies to <strong>elliptical orbits</strong>, with a small change:</p>
+<div class="arithmatex">\[
+T^2 \propto a^3
+\]</div>
+<p>Where <span class="arithmatex">\(a\)</span> is the <strong>semi-major axis</strong> of the ellipse.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>We derived Kepler’s Third Law from basic physics.</li>
+<li>We verified it through Python simulation.</li>
+<li>We explored how it's used in astronomy and satellite science.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
