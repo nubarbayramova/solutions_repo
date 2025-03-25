@@ -81,8 +81,6 @@ This is a **linear equation**, and its solution describes **harmonic oscillation
 
 A **swing** acts as a forced damped pendulum:
 
-![Playground Swing Motion](playground_swing_motion_small.png)
-
 - The child’s motion adds an **external periodic force**.
 
 - If pushing is **in sync** with the swing’s natural frequency → **Resonance occurs** (higher amplitude).

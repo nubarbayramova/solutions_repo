@@ -60,10 +60,6 @@ By measuring:
 
 we can apply Kepler’s Law to calculate **Earth’s mass — or vice versa**, confirm these values based on known mass.
 
-![Moon and Earth](0ab39355-e3a7-44df-91a0-ff67c0029d14.webp)
-
-
-
 ## 📊 Visual Verification
 
 We ran a Python simulation to compute and plot $T^2$ and $r^3$ values for circular orbits around Earth.

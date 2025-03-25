@@ -66,15 +66,9 @@ The following chart shows the **first, second, and third cosmic velocities** for
 
 ### Applying Cosmic Velocities
 
-![Rocket Launch & Cosmic Velocities](rocket_launch_cosmic_velocities_small.png)
-
-This image illustrates **how different cosmic velocities apply in real-world space missions**:
-
 - A **rocket launching from Earth** must first reach **orbital velocity (v₁)** to stay in space.
 - To break free from Earth’s gravity, it must accelerate to **escape velocity (v₂)**.
 - To leave the **Solar System**, like the **Voyager missions**, it must achieve the **third cosmic velocity (v₃)**.
-
-Each motion path—shown by arrows in the image—represents a different mission objective, demonstrating the increasing challenge of leaving Earth, then the Solar System.
 
 
 ## 🧠 Conclusion
