@@ -74,7 +74,7 @@ Projectile motion isn't just theoretical—we experience it in our daily lives:
 
 
 
-## ** Kicking a Football**
+## **Kicking a Football**
 
 
 Projectile motion is commonly observed in sports, especially football. When a player kicks the ball at an angle, it follows a **parabolic trajectory** due to gravity—just like the theoretical models we study.
