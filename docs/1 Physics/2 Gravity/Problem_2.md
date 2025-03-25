@@ -1,17 +1,17 @@
 # Problem 2
 
-# 🚀 Escape Velocities and Cosmic Velocities
+# Escape Velocities and Cosmic Velocities
 
 > “The Earth is the cradle of humanity, but one cannot remain in the cradle forever.” – Konstantin Tsiolkovsky
 
-## 🧭 Overview
+## Overview
 
 Cosmic velocities define the speeds needed for different types of motion under a planet’s gravitational pull. These thresholds are fundamental to **space exploration**, from placing satellites in orbit to launching probes into interstellar space.
 
 
-## ⚙️ Definitions of Cosmic Velocities
+## Definitions of Cosmic Velocities
 
-### 1️⃣ First Cosmic Velocity (Orbital Velocity)
+### First Cosmic Velocity (Orbital Velocity)
 - The **minimum speed required** to stay in a stable circular orbit just above a planet’s surface.
 $$
 v_1 = \sqrt{\frac{G M}{r}}
@@ -19,7 +19,7 @@ $$
 
 
 
-### 2️⃣ Second Cosmic Velocity (Escape Velocity)
+### Second Cosmic Velocity (Escape Velocity)
 - The **minimum speed required to completely escape** the gravitational field of a planet without further propulsion.
 $$
 v_2 = \sqrt{2} \cdot v_1 = \sqrt{\frac{2 G M}{r}}
@@ -27,7 +27,7 @@ $$
 
 
 
-### 3️⃣ Third Cosmic Velocity (Solar Escape Velocity)
+### Third Cosmic Velocity (Solar Escape Velocity)
 - The speed needed to **escape the gravitational pull of the Sun** from Earth’s surface.
 - This includes Earth’s orbital motion and the Sun’s gravitational field.
 - Approximate value:  
@@ -36,7 +36,7 @@ v_3 \approx 42.1 \text{ km/s (from Earth)}
 $$
 
 
-## 📐 Parameters and Equations
+## Parameters and Equations
 
 To compute these velocities, we use the following parameters:
 
@@ -48,14 +48,14 @@ To compute these velocities, we use the following parameters:
 
 
 
-## 📊 Visual Comparison of Velocities
+## Visual Comparison of Velocities
 
 The following chart shows the **first, second, and third cosmic velocities** for Earth, Mars, and Jupiter. For solar escape (v₃), only Earth is shown.
 
 ![Cosmic Velocities Comparison](output.png)
 
 
-## 🌌 Real-World Applications
+## Real-World Applications
 
 | Mission Type | Required Velocity |
 |--------------|-------------------|
@@ -71,7 +71,7 @@ The following chart shows the **first, second, and third cosmic velocities** for
 - To leave the **Solar System**, like the **Voyager missions**, it must achieve the **third cosmic velocity (v₃)**.
 
 
-## 🧠 Conclusion
+## Conclusion
 
 - **First cosmic velocity** lets you orbit.
 

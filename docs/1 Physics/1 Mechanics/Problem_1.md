@@ -63,7 +63,7 @@ plt.show()
 - Increasing **initial velocity** increases the range.
 - Increasing **gravity** decreases the range.
 
-## 🌍 **Real-World Applications**
+##  **Real-World Applications**
 Projectile motion isn't just theoretical—we experience it in our daily lives:
 
 - **Sports:** Kicking a football, throwing a javelin
@@ -74,14 +74,14 @@ Projectile motion isn't just theoretical—we experience it in our daily lives:
 
 
 
-## **⚽️ Kicking a Football**
+## ** Kicking a Football**
 
 
 Projectile motion is commonly observed in sports, especially football. When a player kicks the ball at an angle, it follows a **parabolic trajectory** due to gravity—just like the theoretical models we study.
 
 ![Football Kick Trajectory](football_kick_trajectory.png)
 
-#### 🔍 **Key Insights from This Example:**
+####  **Key Insights from This Example:**
 - The football behaves like a projectile, launched with an initial velocity and angle.
 - The range of the kick depends on the angle of projection, just like in our model.
 - A kick at around **45°** will typically result in the **maximum horizontal distance**.
@@ -92,10 +92,10 @@ Projectile motion is commonly observed in sports, especially football. When a pl
 ## **Further Exploration**
 Future studies and simulations could consider:
 
-- 🌍 **Air Resistance:** The influence of drag on real-world motion.
+-  **Air Resistance:** The influence of drag on real-world motion.
 
-- 🏔️ **Uneven Terrain:** Effects of launching from different heights.
+- **Uneven Terrain:** Effects of launching from different heights.
 
-- 🌕 **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
+-  **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
 
 

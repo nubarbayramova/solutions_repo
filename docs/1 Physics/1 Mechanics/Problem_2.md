@@ -1,14 +1,14 @@
 # Problem 2
 # Investigating the Dynamics of a Forced Damped Pendulum
 
-## 📌 Introduction
+##  Introduction
 The **forced damped pendulum** is a fundamental system in physics and engineering that demonstrates a transition from **simple harmonic motion** to **resonance and chaos** due to the interplay of damping, restoring forces, and external periodic forcing. This study helps us understand complex real-world applications, including **energy harvesting, vibration isolation, and mechanical resonance.**
 
 
 
-## 🧑‍🏫 **1. Theoretical Foundation**
+## **1. Theoretical Foundation**
 
-### 🔹 Governing Equation
+### Governing Equation
 The motion of a **forced damped pendulum** is described by the following **differential equation**:
 
 $$
@@ -29,7 +29,7 @@ where:
 
 - **$Ω$** → Frequency of the external force
 
-### 🔹 Small-Angle Approximation
+### Small-Angle Approximation
 For **small oscillations**, we approximate **$\sin\theta \approx \theta$**, simplifying the equation to:
 
 $$
@@ -38,7 +38,7 @@ $$
 
 This is a **linear equation**, and its solution describes **harmonic oscillations**.
 
-### 🔹 Resonance Conditions
+### Resonance Conditions
 - When the driving frequency **$Ω$** matches the system's natural frequency:
   $$
   \omega_0 = \sqrt{\frac{g}{L}}
@@ -49,16 +49,16 @@ This is a **linear equation**, and its solution describes **harmonic oscillation
 
 
 
-## 🔬 **2. Analysis of Dynamics**
+##  **2. Analysis of Dynamics**
 
-### 🔹 Key Parameters Affecting Motion
+### Key Parameters Affecting Motion
 1. **Damping coefficient $b$**: Higher damping reduces oscillations and suppresses chaos.
 
 2. **Driving force amplitude $A$**: Large values introduce nonlinear behavior and chaos.
 
 3. **Driving frequency $Ω$**: Affects resonance and synchronization.
 
-### 🔹 Regular vs. Chaotic Motion
+### Regular vs. Chaotic Motion
 
 - **Low damping & weak forcing** → **Periodic oscillations** (predictable motion).
 
@@ -68,14 +68,14 @@ This is a **linear equation**, and its solution describes **harmonic oscillation
 
 
 
-## 🌍 **3. Real-World Applications**
+##  **3. Real-World Applications**
 ### Common Uses of Forced Damped Pendulums
 
-- **🏗️ Suspension Bridges** → Studying oscillations in structures.
+- **Suspension Bridges** → Studying oscillations in structures.
 
-- **🔋 Energy Harvesting** → Using vibrations to generate electricity.
+- **Energy Harvesting** → Using vibrations to generate electricity.
 
-- **⚡ Oscillating Circuits** → Analogous to driven **RLC circuits**.
+- **Oscillating Circuits** → Analogous to driven **RLC circuits**.
 
 ### **Real-World Example: A Playground Swing**
 
@@ -91,7 +91,7 @@ A **swing** acts as a forced damped pendulum:
 
 
 
-## 🖥️ **4. Computational Implementation**
+## **4. Computational Implementation**
 We develop a **Python simulation** to:
 
 - Numerically **solve the differential equation**.
@@ -100,7 +100,7 @@ We develop a **Python simulation** to:
 
 - Generate **phase diagrams** and **Poincaré sections** to illustrate chaotic transitions.
 
-### 🔹 **Python Script**
+### **Python Script**
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -155,7 +155,7 @@ This graph shows how the angular displacement of the pendulum changes over time 
 
 
 
-## 📌 **Conclusion**
+## **Conclusion**
 The forced damped pendulum is a rich model for exploring **chaotic dynamics, resonance, and real-world oscillations**. By analyzing its behavior, we gain insights into **engineering, physics, and even biological rhythms**.
 
 

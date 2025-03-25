@@ -1,11 +1,11 @@
 # Problem 1
 
 
-# 🌌 Kepler's Third Law: Orbital Period and Radius
+# Kepler's Third Law: Orbital Period and Radius
 
 > "The harmony of the world is made manifest in the laws of nature." – Kepler
 
-## ⚙️ What Are We Exploring?
+## What Are We Exploring?
 
 We aim to understand how a planet or satellite’s **orbital period** (how long it takes to complete an orbit) is related to its **distance from the central body**.
 
@@ -23,7 +23,7 @@ Where:
 
 
 
-## 📐 The Physics Behind It
+## The Physics Behind It
 
 We start from two fundamental physics principles:
 
@@ -50,7 +50,7 @@ This shows that for **circular orbits**, the square of the orbital period is pro
 
 
 
-## 🌍 Real-World Example: The Moon & Earth
+## Real-World Example: The Moon & Earth
 
 By measuring:
 
@@ -60,7 +60,7 @@ By measuring:
 
 we can apply Kepler’s Law to calculate **Earth’s mass — or vice versa**, confirm these values based on known mass.
 
-## 📊 Visual Verification
+## Visual Verification
 
 We ran a Python simulation to compute and plot $T^2$ and $r^3$ values for circular orbits around Earth.
 
@@ -72,7 +72,7 @@ As expected, the relationship is **linear**, confirming Kepler's Third Law in ac
 
 
 
-##  Why Does This Matter?
+## Why Does This Matter?
 
 - Helps **design satellite orbits** (e.g., GPS, Starlink)
 

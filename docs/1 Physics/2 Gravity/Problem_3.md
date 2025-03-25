@@ -2,10 +2,10 @@
 
 # Trajectories of a Freely Released Payload Near Earth
 
-## 🌍 Motivation
+## Motivation
 When an object (payload) is released from a rocket near Earth, it enters a new gravitational context depending on its velocity, position, and direction. This scenario helps us explore the principles of **orbital mechanics**, **gravitational physics**, and **space mission dynamics**.
 
-## 🧠 Theoretical Background
+## Theoretical Background
 
 ### Newton's Law of Gravitation
 The force acting on the payload due to Earth's gravity is:
@@ -44,10 +44,10 @@ The total mechanical energy $E$ of the payload determines the type of trajectory
 
 
 
-## 📊 Simulation in Python
+## Simulation in Python
 Below is a Python implementation that simulates the motion of a payload released from low Earth orbit with various initial speeds.
 
-### 🧮 Python Code
+### Python Code
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -104,7 +104,7 @@ plt.show()
 
 ![Payload Trajectories from low Earth Orbit](Unknown-2.png)
 
-## 🚀 Trajectory Types Observed
+## Trajectory Types Observed
 - **Sub-orbital fall** (if initial speed is too low)
 
 - **Circular/Elliptical orbit** (if speed ≈ orbital speed)
@@ -114,7 +114,7 @@ plt.show()
 - **Hyperbolic** (if speed greatly exceeds escape velocity)
 
 
-## 🛰️ Real-World Applications
+## Real-World Applications
 - **Satellite deployment**: Requires precision in velocity to maintain orbit
 
 - **Reentry capsules**: Released to descend back to Earth
@@ -122,7 +122,7 @@ plt.show()
 - **Interplanetary missions**: Require escape trajectory from Earth and then Sun
 
 
-## 📌 Conclusion
+## Conclusion
 By changing the **initial speed and angle**, the payload’s trajectory dramatically shifts. Numerical simulations provide deep insights into how small changes affect mission success—from stable orbits to deep space escape.
 
 This analysis and tool are fundamental in planning any real-world space deployment or return mission.
