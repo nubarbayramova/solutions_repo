@@ -172,6 +172,138 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
+<h2 id="motivation">🌍 Motivation</h2>
+<p>When an object (payload) is released from a rocket near Earth, it enters a new gravitational context depending on its velocity, position, and direction. This scenario helps us explore the principles of <strong>orbital mechanics</strong>, <strong>gravitational physics</strong>, and <strong>space mission dynamics</strong>.</p>
+<h2 id="theoretical-background">🧠 Theoretical Background</h2>
+<h3 id="newtons-law-of-gravitation">Newton's Law of Gravitation</h3>
+<p>The force acting on the payload due to Earth's gravity is:
+$$
+\vec{F} = -\frac{G M m}{r^2} \hat{r}
+$$</p>
+<p>Where:
+- <span class="arithmatex">\(G\)</span> is the gravitational constant</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(M\)</span> is Earth’s mass</p>
+</li>
+<li>
+<p><span class="arithmatex">\(m\)</span> is the payload’s mass</p>
+</li>
+<li>
+<p><span class="arithmatex">\(r\)</span> is the distance from Earth's center</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\hat{r}\)</span> is the unit vector pointing 
+from the payload to the Earth’s center</p>
+</li>
+</ul>
+<p>This force produces an acceleration:
+$$
+\vec{a} = -\frac{G M}{r^2} \hat{r}
+$$</p>
+<h3 id="orbital-energy-and-trajectory-types">Orbital Energy and Trajectory Types</h3>
+<p>The total mechanical energy <span class="arithmatex">\(E\)</span> of the payload determines the type of trajectory:
+- <span class="arithmatex">\(E &lt; 0\)</span>: Elliptical orbit (bound)</p>
+<ul>
+<li><span class="arithmatex">\(E = 0\)</span>: Parabolic trajectory (escape edge)</li>
+<li><span class="arithmatex">\(E &gt; 0\)</span>: Hyperbolic trajectory (escape)</li>
+</ul>
+<h3 id="key-velocities">Key Velocities</h3>
+<ul>
+<li>
+<p><strong>Orbital velocity</strong>: <span class="arithmatex">\(<span class="arithmatex">\(v = \sqrt{\frac{G M}{r}}\)</span>\)</span></p>
+</li>
+<li>
+<p><strong>Escape velocity</strong>: <span class="arithmatex">\(<span class="arithmatex">\(v = \sqrt{\frac{2 G M}{r}}\)</span>\)</span></p>
+</li>
+</ul>
+<h2 id="simulation-in-python">📊 Simulation in Python</h2>
+<p>Below is a Python implementation that simulates the motion of a payload released from low Earth orbit with various initial speeds.</p>
+<h3 id="python-code">🧮 Python Code</h3>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Constants
+G = 6.67430e-11  # gravitational constant (m^3/kg/s^2)
+M = 5.972e24     # mass of Earth (kg)
+R_earth = 6.371e6  # radius of Earth (m)
+
+# Gravitational acceleration function
+def gravity(t, y):
+    x, y_, vx, vy = y
+    r = np.sqrt(x**2 + y_**2)
+    ax = -G * M * x / r**3
+    ay = -G * M * y_ / r**3
+    return [vx, vy, ax, ay]
+
+# Initial conditions for different velocities
+altitude = 300e3  # 300 km above Earth surface
+r0 = R_earth + altitude
+angles = [0, 30, 45, 60]  # degrees
+
+# Choose initial speeds
+v_orbit = np.sqrt(G * M / r0)        # orbital
+v_escape = np.sqrt(2 * G * M / r0)    # escape
+velocities = [0.8 * v_orbit, v_orbit, 1.1 * v_orbit, v_escape * 1.05]
+
+# Time span
+t_span = (0, 7000)
+t_eval = np.linspace(*t_span, 1000)
+
+# Plot setup
+plt.figure(figsize=(8, 8))
+
+for v0 in velocities:
+    y0 = [r0, 0, 0, v0]  # launch from (r0, 0) with velocity in y direction
+    sol = solve_ivp(gravity, t_span, y0, t_eval=t_eval, rtol=1e-8)
+    plt.plot(sol.y[0] / 1e3, sol.y[1] / 1e3, label=f'v0 = {v0/1e3:.2f} km/s')
+
+# Earth
+circle = plt.Circle((0, 0), R_earth / 1e3, color='blue', alpha=0.3, label='Earth')
+plt.gca().add_artist(circle)
+
+plt.xlabel('x (km)')
+plt.ylabel('y (km)')
+plt.title('Payload Trajectories from Low Earth Orbit')
+plt.axis('equal')
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
+</code></pre>
+<p><img alt="Payload Trajectories from low Earth Orbit" src="../Unknown-2.png"/></p>
+<h2 id="trajectory-types-observed">🚀 Trajectory Types Observed</h2>
+<ul>
+<li>
+<p><strong>Sub-orbital fall</strong> (if initial speed is too low)</p>
+</li>
+<li>
+<p><strong>Circular/Elliptical orbit</strong> (if speed ≈ orbital speed)</p>
+</li>
+<li>
+<p><strong>Escape</strong> (if speed &gt; escape velocity)</p>
+</li>
+<li>
+<p><strong>Hyperbolic</strong> (if speed greatly exceeds escape velocity)</p>
+</li>
+</ul>
+<h2 id="real-world-applications">🛰️ Real-World Applications</h2>
+<ul>
+<li>
+<p><strong>Satellite deployment</strong>: Requires precision in velocity to maintain orbit</p>
+</li>
+<li>
+<p><strong>Reentry capsules</strong>: Released to descend back to Earth</p>
+</li>
+<li>
+<p><strong>Interplanetary missions</strong>: Require escape trajectory from Earth and then Sun</p>
+</li>
+</ul>
+<h2 id="conclusion">📌 Conclusion</h2>
+<p>By changing the <strong>initial speed and angle</strong>, the payload’s trajectory dramatically shifts. Numerical simulations provide deep insights into how small changes affect mission success—from stable orbits to deep space escape.</p>
+<p>This analysis and tool are fundamental in planning any real-world space deployment or return mission.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
