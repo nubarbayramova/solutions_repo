@@ -147,6 +147,7 @@ The color map in the visualization represents instantaneous displacement of the 
 The radius of the polygon (i.e., the distance from the origin to each source) determines the overall scale of the interference structure. A larger radius spreads the sources farther apart, potentially increasing the central region’s complexity. Conversely, a smaller radius condenses the interference features near the center.
 
 Overall, the analysis shows that the resulting interference pattern is a rich function of geometry, wavelength, and wave coherence. These findings are fundamental in fields like optics, acoustics, and fluid dynamics.
+
 - Animate the wave pattern over time by varying `t`
 
 - Use other polygons (triangle, pentagon, hexagon) and compare their patterns
