@@ -126,13 +126,27 @@ plt.show()
 ![interference-pattern](Unknown-4.png)
 
 ## Observations and Analysis
-- **Constructive Interference:** Occurs where wave peaks align, resulting in higher displacement amplitudes. These appear as bright or dark concentric lines in the plot.
+The resulting interference pattern, derived from the superposition of waves emitted at regular polygon vertices, reveals several significant physical phenomena:
 
-- **Destructive Interference:** Occurs where a wave peak meets a trough from another wave, canceling each other out. These regions appear as transition zones.
+### Constructive Interference
+Constructive interference occurs at points where the wavefronts from multiple sources arrive in phase. This means the path length differences between sources correspond to integer multiples of the wavelength. In the visualization, these points manifest as high-displacement fringes. For a square configuration, these fringes exhibit square symmetry, with pronounced periodicity along diagonals and sides.
 
-- **Symmetry and Pattern:** The interference pattern reflects the geometric symmetry of the polygon. A square shows fourfold rotational symmetry.
+### Destructive Interference
+Destructive interference emerges where wavefronts arrive out of phase (typically by half a wavelength). This leads to cancellation of displacement, and such areas are represented by low or nearly zero values in the plot. These points often lie between the maxima and form nodal lines or regions, creating the characteristic ripple effects seen in the interference map.
 
-## Possible Extensions
+### Symmetry of the Pattern
+The symmetry of the polygonal configuration plays a crucial role in shaping the pattern. A square arrangement yields a pattern with fourfold rotational symmetry and reflectional symmetry along its diagonals and axes. If the number of sources changes (e.g., using a triangle or pentagon), the symmetry and spacing of the interference fringes would also change correspondingly.
+
+### Fringe Spacing and Wavelength Relationship
+The density of interference fringes is inversely proportional to the wavelength. A shorter wavelength results in more closely spaced fringes, increasing the resolution and complexity of the pattern. In this simulation, the chosen wavelength balances clarity with computational feasibility.
+
+### Interpretation of the Color Map
+The color map in the visualization represents instantaneous displacement of the water surface. Red and blue regions denote opposite displacement polarities (peaks and troughs), while intermediate colors indicate zero-crossings or regions of destructive interference. The clear, periodic alternation between high and low displacement illustrates the coherent and stable nature of the wave sources.
+
+### Influence of Source Radius
+The radius of the polygon (i.e., the distance from the origin to each source) determines the overall scale of the interference structure. A larger radius spreads the sources farther apart, potentially increasing the central region’s complexity. Conversely, a smaller radius condenses the interference features near the center.
+
+Overall, the analysis shows that the resulting interference pattern is a rich function of geometry, wavelength, and wave coherence. These findings are fundamental in fields like optics, acoustics, and fluid dynamics.
 - Animate the wave pattern over time by varying `t`
 
 - Use other polygons (triangle, pentagon, hexagon) and compare their patterns
