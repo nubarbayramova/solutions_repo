@@ -140,7 +140,7 @@ Drift velocity:
 
 v_d = (E × B) / B²
 
-Simulation parameters for E × B drift:
+Simulation parameters for $E × B$ drift:
 ```python
 E = np.array([0, 1e3, 0])
 B = np.array([0, 0, 1])
