@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Equivalent Resistance Using Graph Theory - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Equivalent Resistance Using Graph Theory";
         var mkdocs_page_input_path = "1 Physics/5 Circuits/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -76,8 +76,40 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">5 Circuits</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Equivalent Resistance Using Graph Theory</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-setup">Problem Setup</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#graph-representation-of-a-circuit">Graph Representation of a Circuit</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#pseudocode-and-algorithm-description">Pseudocode and Algorithm Description</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#series-reduction-rule">Series Reduction Rule</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#parallel-reduction-rule">Parallel Reduction Rule</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#pseudocode">Pseudocode</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#python-implementation">Python Implementation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#imports-and-utilities">Imports and Utilities</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#visualization-function">Visualization Function</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#simplification-algorithm">Simplification Algorithm</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#test-circuit-example">Test Circuit Example</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis-and-use-cases">Analysis and Use Cases</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +195,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">5 Circuits</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Equivalent Resistance Using Graph Theory</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +203,142 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="equivalent-resistance-using-graph-theory">Equivalent Resistance Using Graph Theory</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Determining the equivalent resistance between two points in a circuit is essential for understanding current flow and power distribution. While traditional series-parallel simplifications work for small circuits, complex or nested resistor networks are better handled using graph theory.</p>
+<p>By modeling the circuit as a graph:</p>
+<ul>
+<li>
+<p><strong>Nodes</strong> represent electrical junctions.</p>
+</li>
+<li>
+<p><strong>Edges</strong> represent resistors with weights equal to their resistance.</p>
+</li>
+</ul>
+<h2 id="problem-setup">Problem Setup</h2>
+<h3 id="graph-representation-of-a-circuit">Graph Representation of a Circuit</h3>
+<ul>
+<li>
+<p>Each junction in the circuit becomes a node.</p>
+</li>
+<li>
+<p>Each resistor becomes a weighted edge.</p>
+</li>
+<li>
+<p>The goal is to reduce the graph until only one edge remains between the source and target nodes.</p>
+</li>
+</ul>
+<h2 id="pseudocode-and-algorithm-description">Pseudocode and Algorithm Description</h2>
+<h3 id="series-reduction-rule">Series Reduction Rule</h3>
+<p>If a node has exactly two neighbors (degree 2) and is not the source/target:</p>
+<ul>
+<li>
+<p>Replace it with a direct connection between its neighbors.</p>
+</li>
+<li>
+<p>Combine resistances by addition.</p>
+</li>
+</ul>
+<h3 id="parallel-reduction-rule">Parallel Reduction Rule</h3>
+<p>If there are multiple edges between the same two nodes:</p>
+<ul>
+<li>Combine resistances using the formula:
+  <span class="arithmatex">\(<span class="arithmatex">\(R_{eq} = \left( \sum_{i} \frac{1}{R_i} \right)^{-1}\)</span>\)</span></li>
+</ul>
+<h3 id="pseudocode">Pseudocode</h3>
+<pre><code class="language-text">FUNCTION simplify_circuit(graph):
+    WHILE graph is not fully reduced:
+        FOR each node:
+            IF degree == 2 and not terminal:
+                replace with series resistor
+        FOR node pairs with multiple edges:
+            replace with single parallel resistor
+    RETURN resistance between source and target
+</code></pre>
+<h2 id="python-implementation">Python Implementation</h2>
+<h3 id="imports-and-utilities">Imports and Utilities</h3>
+<pre><code class="language-python">import networkx as nx
+import matplotlib.pyplot as plt
+
+def combine_series(R1, R2):
+    return R1 + R2
+
+def combine_parallel(R1, R2):
+    return 1 / (1 / R1 + 1 / R2)
+</code></pre>
+<h3 id="visualization-function">Visualization Function</h3>
+<pre><code class="language-python">def draw_graph(G, title):
+    pos = nx.spring_layout(G, seed=42)
+    edge_labels = nx.get_edge_attributes(G, 'resistance')
+    nx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=600)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+    plt.title(title)
+    plt.show()
+</code></pre>
+<h3 id="simplification-algorithm">Simplification Algorithm</h3>
+<pre><code class="language-python">def simplify_circuit(G, source, target):
+    step = 1
+    draw_graph(G, f"Step {step}: Initial Circuit")
+    step += 1
+    changed = True
+    while changed:
+        changed = False
+
+        for node in list(G.nodes):
+            if node not in [source, target] and G.degree(node) == 2:
+                neighbors = list(G.neighbors(node))
+                if len(neighbors) == 2 and not G.has_edge(neighbors[0], neighbors[1]):
+                    r1 = G[neighbors[0]][node]['resistance']
+                    r2 = G[neighbors[1]][node]['resistance']
+                    combined = combine_series(r1, r2)
+                    G.add_edge(neighbors[0], neighbors[1], resistance=combined)
+                    G.remove_node(node)
+                    changed = True
+                    draw_graph(G, f"Step {step}: After series simplification at {node}")
+                    step += 1
+                    break
+
+        edge_counts = {}
+        for u, v in list(G.edges):
+            key = tuple(sorted([u, v]))
+            edge_counts.setdefault(key, []).append(G[u][v]['resistance'])
+
+        for (u, v), resistances in edge_counts.items():
+            if len(resistances) &gt; 1:
+                req = resistances[0]
+                for r in resistances[1:]:
+                    req = combine_parallel(req, r)
+                G.remove_edges_from([(u, v)] * len(resistances))
+                G.add_edge(u, v, resistance=req)
+                changed = True
+                draw_graph(G, f"Step {step}: After parallel simplification between {u}-{v}")
+                step += 1
+                break
+
+    return G
+</code></pre>
+<h3 id="test-circuit-example">Test Circuit Example</h3>
+<pre><code class="language-python">G = nx.Graph()
+G.add_edge('A', 'B', resistance=10)
+G.add_edge('B', 'C', resistance=20)
+G.add_edge('A', 'C', resistance=30)
+
+simplified = simplify_circuit(G, 'A', 'C')
+print("Final Equivalent Resistance between A and C:", simplified['A']['C']['resistance'])
+</code></pre>
+<p><img alt="initial-circuit" src="../Unknown-7.png"/></p>
+<h2 id="analysis-and-use-cases">Analysis and Use Cases</h2>
+<ul>
+<li>
+<p>Works well for resistive-only circuits.</p>
+</li>
+<li>
+<p>Scales better than manual methods for medium-complexity problems.</p>
+</li>
+<li>
+<p>Can be adapted for educational circuit solvers, PCB validation tools, and simulation engines.</p>
+</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
