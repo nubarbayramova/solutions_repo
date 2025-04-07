@@ -92,7 +92,9 @@ for n in sample_sizes:
 ![sample-means-1](Unknown-9.png)
 
 ![sample-means-2](Unknown-10.png)
+
 ![sample-means-3](Unknown-11.png)
+
 ![sample-means-4](Unknown-12.png)
 
 
@@ -124,8 +126,11 @@ for n in sample_sizes:
     plt.show()
 ```
 ![expo-sample-1](Unknown-14.png)
+
 ![expo-sample-2](Unknown-15.png)
+
 ![expo-sample-3](Unknown-16.png)
+
 ![expo-sample-4](Unknown-17.png)
 
 
@@ -157,8 +162,11 @@ for n in sample_sizes:
     plt.show()
 ```
 ![bino-sample-1](Unknown-19.png)
+
 ![bino-sample-2](Unknown-20.png)
+
 ![bino-sample-3](Unknown-21.png)
+
 ![bino-sample-4](Unknown-22.png)
 ## Observations
 
