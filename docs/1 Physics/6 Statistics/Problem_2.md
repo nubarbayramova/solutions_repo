@@ -31,7 +31,7 @@ $$
 \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}
 $$
 
-If we randomly generate points in the square, the probability that a point falls inside the circle is also $$\frac{\pi}{4}$$
+If we randomly generate points in the square, the probability that a point falls inside the circle is also $\frac{\pi}{4}$
 
 Hence:
 
