@@ -11,7 +11,7 @@ In this project, we explore the CLT through hands-on simulations using Python.
 
 ## Mathematical Expression of the CLT
 
-Let $ X_1, X_2, \ldots, X_n $ be a random sample of size $n$ drawn from a population with:
+Let $X_1, X_2, \ldots, X_n$ be a random sample of size $n$ drawn from a population with:
 
 - Mean $\mu$
 
