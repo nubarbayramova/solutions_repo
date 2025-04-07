@@ -76,7 +76,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">5 Circuits</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Equivalent Resistance Using Graph Theory</a>
+<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Problem 1</a>
 </li>
 </ul>
 </li>
@@ -172,10 +172,190 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="exploring-the-central-limit-theorem-through-simulations">Exploring the Central Limit Theorem through Simulations</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The <strong>Central Limit Theorem (CLT)</strong> is a foundational principle in probability and statistics. It states that the <strong>sampling distribution of the sample mean</strong> becomes approximately normal as the sample size increases, <strong>regardless of the original population distribution</strong>—provided the samples are independent and identically distributed.</p>
+<p>This property is essential for statistical inference and underpins many techniques in hypothesis testing, confidence intervals, and quality control.</p>
+<p>In this project, we explore the CLT through hands-on simulations using Python.</p>
+<h2 id="mathematical-expression-of-the-clt">Mathematical Expression of the CLT</h2>
+<p>Let $ X_1, X_2, \ldots, X_n $ be a random sample of size <span class="arithmatex">\(n\)</span> drawn from a population with:</p>
+<ul>
+<li>
+<p>Mean <span class="arithmatex">\(\mu\)</span></p>
+</li>
+<li>
+<p>Standard deviation <span class="arithmatex">\(\sigma\)</span></p>
+</li>
+</ul>
+<p>Then the <strong>sampling distribution of the sample mean</strong> <span class="arithmatex">\(\bar{X}\)</span> approaches a <strong>normal distribution</strong> as <span class="arithmatex">\(n \to \infty\)</span>:</p>
+<div class="arithmatex">\[
+\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i \xrightarrow{d} \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right)
+\]</div>
+<p>This means:</p>
+<ul>
+<li>
+<p>The <strong>mean</strong> of the sampling distribution is <span class="arithmatex">\(\mu\)</span></p>
+</li>
+<li>
+<p>The <strong>variance</strong> is <span class="arithmatex">\(\frac{\sigma^2}{n}\)</span></p>
+</li>
+<li>
+<p>The <strong>standard deviation</strong> (called the standard error) is <span class="arithmatex">\(\frac{\sigma}{\sqrt{n}}\)</span></p>
+</li>
+</ul>
+<h2 id="simulation-setup">Simulation Setup</h2>
+<p>We investigate the CLT using the following population distributions:</p>
+<ul>
+<li>
+<p><strong>Uniform Distribution</strong>: All values within a range are equally likely.</p>
+</li>
+<li>
+<p><strong>Exponential Distribution</strong>: A skewed distribution modeling time between events.</p>
+</li>
+<li>
+<p><strong>Binomial Distribution</strong>: Discrete distribution representing success/failure outcomes.</p>
+</li>
+</ul>
+<h3 id="libraries-and-configuration">Libraries and Configuration</h3>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Plot styling
+sns.set(style="whitegrid")
+np.random.seed(42)
+
+# Configuration
+population_size = 100_000
+sample_sizes = [5, 10, 30, 50]
+num_samples = 1000
+</code></pre>
+<h2 id="uniform-distribution">Uniform Distribution</h2>
+<h3 id="population-overview">Population Overview</h3>
+<pre><code class="language-python"># Generate uniform distribution
+uniform_population = np.random.uniform(low=0, high=10, size=population_size)
+
+# Plot population
+sns.histplot(uniform_population, bins=50, kde=True)
+plt.title("Uniform Population Distribution")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.show()
+</code></pre>
+<p><img alt="uniform-population-distribution" src="../Unknown-8.png"/></p>
+<h3 id="sampling-distributions">Sampling Distributions</h3>
+<pre><code class="language-python">for n in sample_sizes:
+    means = [np.mean(np.random.choice(uniform_population, size=n)) for _ in range(num_samples)]
+    sns.histplot(means, bins=30, kde=True)
+    plt.title(f"Sample Means (Uniform, n={n})")
+    plt.xlabel("Sample Mean")
+    plt.ylabel("Frequency")
+    plt.show()
+</code></pre>
+<p><img alt="sample-means-1" src="../Unknown-9.png"/></p>
+<p><img alt="sample-means-2" src="../Unknown-10.png"/>
+<img alt="sample-means-3" src="../Unknown-11.png"/>
+<img alt="sample-means-4" src="../Unknown-12.png"/></p>
+<h2 id="exponential-distribution">Exponential Distribution</h2>
+<h3 id="population-overview_1">Population Overview</h3>
+<pre><code class="language-python"># Generate exponential distribution
+exponential_population = np.random.exponential(scale=1.0, size=population_size)
+
+sns.histplot(exponential_population, bins=50, kde=True)
+plt.title("Exponential Population Distribution")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.show()
+</code></pre>
+<p><img alt="expo-population-distribution" src="../Unknown-13.png"/></p>
+<h3 id="sampling-distributions_1">Sampling Distributions</h3>
+<pre><code class="language-python">for n in sample_sizes:
+    means = [np.mean(np.random.choice(exponential_population, size=n)) for _ in range(num_samples)]
+    sns.histplot(means, bins=30, kde=True)
+    plt.title(f"Sample Means (Exponential, n={n})")
+    plt.xlabel("Sample Mean")
+    plt.ylabel("Frequency")
+    plt.show()
+</code></pre>
+<p><img alt="expo-sample-1" src="../Unknown-14.png"/>
+<img alt="expo-sample-2" src="../Unknown-15.png"/>
+<img alt="expo-sample-3" src="../Unknown-16.png"/>
+<img alt="expo-sample-4" src="../Unknown-17.png"/></p>
+<h2 id="binomial-distribution">Binomial Distribution</h2>
+<h3 id="population-overview_2">Population Overview</h3>
+<pre><code class="language-python"># Generate binomial distribution
+binomial_population = np.random.binomial(n=10, p=0.5, size=population_size)
+
+sns.histplot(binomial_population, bins=11)
+plt.title("Binomial Population Distribution")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.show()
+</code></pre>
+<p><img alt="binominal-population-distribution" src="../Unknown-18.png"/></p>
+<h3 id="sampling-distributions_2">Sampling Distributions</h3>
+<pre><code class="language-python">for n in sample_sizes:
+    means = [np.mean(np.random.choice(binomial_population, size=n)) for _ in range(num_samples)]
+    sns.histplot(means, bins=30, kde=True)
+    plt.title(f"Sample Means (Binomial, n={n})")
+    plt.xlabel("Sample Mean")
+    plt.ylabel("Frequency")
+    plt.show()
+</code></pre>
+<p><img alt="bino-sample-1" src="../Unknown-19.png"/>
+<img alt="bino-sample-2" src="../Unknown-20.png"/>
+<img alt="bino-sample-3" src="../Unknown-21.png"/>
+<img alt="bino-sample-4" src="../Unknown-22.png"/></p>
+<h2 id="observations">Observations</h2>
+<ul>
+<li>
+<p>As the <strong>sample size increases</strong>, the sampling distribution of the mean <strong>approaches a normal shape</strong>.</p>
+</li>
+<li>
+<p>This convergence occurs <strong>regardless of the population distribution</strong>:</p>
+</li>
+<li>
+<p>For skewed distributions like exponential, larger sample sizes are needed.</p>
+</li>
+<li>
+<p>For symmetric distributions like uniform or binomial, convergence is faster.</p>
+</li>
+<li>
+<p>The <strong>spread (standard deviation)</strong> of the sampling distribution <strong>decreases with larger samples</strong>.</p>
+</li>
+</ul>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<p>The CLT is used in:</p>
+<ul>
+<li>
+<p><strong>Estimating population parameters</strong> when the population distribution is unknown.</p>
+</li>
+<li>
+<p><strong>Quality control</strong> in industrial settings using sample-based inspections.</p>
+</li>
+<li>
+<p><strong>Finance</strong> for modeling average returns and risks.</p>
+</li>
+<li>
+<p><strong>Scientific research</strong> where sample statistics are used for inference.</p>
+</li>
+</ul>
+<h2 id="tools-and-technologies">Tools and Technologies</h2>
+<ul>
+<li>
+<p><strong>NumPy</strong>: Random data generation and statistical operations</p>
+</li>
+<li>
+<p><strong>Matplotlib &amp; Seaborn</strong>: Plotting and visualization</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Through these simulations, we observed the Central Limit Theorem in action: no matter the shape of the original distribution, the <strong>distribution of the sample mean becomes approximately normal</strong> as the sample size increases.</p>
+<p>This powerful result explains the <strong>ubiquity of the normal distribution</strong> in statistics and confirms why the CLT is a cornerstone of inferential techniques.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../5%20Circuits/Problem_1/" title="Equivalent Resistance Using Graph Theory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../5%20Circuits/Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>

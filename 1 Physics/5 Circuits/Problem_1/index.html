@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Equivalent Resistance Using Graph Theory - Physics and Mathematics</title>
+<title>Problem 1 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Equivalent Resistance Using Graph Theory";
+        var mkdocs_page_name = "Problem 1";
         var mkdocs_page_input_path = "1 Physics/5 Circuits/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -76,40 +76,8 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">5 Circuits</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Equivalent Resistance Using Graph Theory</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#problem-setup">Problem Setup</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#graph-representation-of-a-circuit">Graph Representation of a Circuit</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#pseudocode-and-algorithm-description">Pseudocode and Algorithm Description</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#series-reduction-rule">Series Reduction Rule</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#parallel-reduction-rule">Parallel Reduction Rule</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#pseudocode">Pseudocode</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#python-implementation">Python Implementation</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#imports-and-utilities">Imports and Utilities</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#visualization-function">Visualization Function</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#simplification-algorithm">Simplification Algorithm</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#test-circuit-example">Test Circuit Example</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#analysis-and-use-cases">Analysis and Use Cases</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -195,7 +163,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">5 Circuits</li>
-<li class="breadcrumb-item active">Equivalent Resistance Using Graph Theory</li>
+<li class="breadcrumb-item active">Problem 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -203,6 +171,7 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
+<h1 id="problem-1">Problem 1</h1>
 <h1 id="equivalent-resistance-using-graph-theory">Equivalent Resistance Using Graph Theory</h1>
 <h2 id="introduction">Introduction</h2>
 <p>Determining the equivalent resistance between two points in a circuit is essential for understanding current flow and power distribution. While traditional series-parallel simplifications work for small circuits, complex or nested resistor networks are better handled using graph theory.</p>
@@ -243,7 +212,7 @@
 <p>If there are multiple edges between the same two nodes:</p>
 <ul>
 <li>Combine resistances using the formula:
-  <span class="arithmatex">\(<span class="arithmatex">\(R_{eq} = \left( \sum_{i} \frac{1}{R_i} \right)^{-1}\)</span>\)</span></li>
+  <span class="arithmatex">\(<span class="arithmatex">\(R_{eq} = ( \sum_{i} \frac{1}{R_i})^{-1}\)</span>\)</span></li>
 </ul>
 <h3 id="pseudocode">Pseudocode</h3>
 <pre><code class="language-text">FUNCTION simplify_circuit(graph):
