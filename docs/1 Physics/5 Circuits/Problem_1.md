@@ -1,3 +1,5 @@
+# Problem 1
+
 # Equivalent Resistance Using Graph Theory
 
 ## Introduction
@@ -36,7 +38,7 @@ If a node has exactly two neighbors (degree 2) and is not the source/target:
 If there are multiple edges between the same two nodes:
 
 - Combine resistances using the formula:
-  $$R_{eq} = \left( \sum_{i} \frac{1}{R_i} \right)^{-1}$$
+  $$R_{eq} = ( \sum_{i} \frac{1}{R_i})^{-1}$$
 
 ### Pseudocode
 ```text
