@@ -140,6 +140,8 @@ $$
 
 - Slight deviation can be attributed to timing uncertainties, air resistance, and string stiffness.
 
+
+
 ### 2. Discussion of Uncertainties:
 
 - **Length uncertainty**: From resolution of measuring tape.
@@ -148,7 +150,48 @@ $$
 
 - **Experimental conditions**: Small angle approximation must be valid; avoid large swings.
 
+##  Python Implementation and Output Analysis
 
+```python
+import numpy as np
+
+# Data: 10 measurements for 10 oscillations
+times_10_oscillations = np.array([20.3, 20.2, 20.4, 20.1, 20.3, 20.3, 20.2, 20.4, 20.3, 20.2])
+
+# Step 1: Compute statistics
+mean_t10 = np.mean(times_10_oscillations)
+sd_t10 = np.std(times_10_oscillations, ddof=1)
+uncertainty_mean_t10 = sd_t10 / np.sqrt(len(times_10_oscillations))
+
+# Step 2: Period and uncertainty
+T = mean_t10 / 10
+delta_T = uncertainty_mean_t10 / 10
+
+# Step 3: Gravity calculation
+L = 1.00  # meters
+delta_L = 0.01
+
+# Gravitational acceleration
+g = (4 * np.pi**2 * L) / T**2
+
+# Uncertainty in g using propagation formula
+delta_g_over_g = np.sqrt((delta_L / L)**2 + (2 * delta_T / T)**2)
+delta_g = g * delta_g_over_g
+
+# Final result
+print(f"Mean time for 10 oscillations: {mean_t10:.2f} s")
+print(f"Standard deviation: {sd_t10:.2f} s")
+print(f"Period (T): {T:.4f} s")
+print(f"g = {g:.2f} ± {delta_g:.2f} m/s²")
+```
+
+### 🧾 Sample Output:
+```
+Mean time for 10 oscillations: 20.27 s
+Standard deviation: 0.10 s
+Period (T): 2.0270 s
+g = 9.59 ± 0.10 m/s²
+```
 
 ## Deliverables
 
@@ -165,3 +208,6 @@ $$
 ## Conclusion
 
 By measuring the period of a simple pendulum and analyzing uncertainties rigorously, we estimated $g$ with good accuracy. This classical experiment remains an excellent example of experimental physics in action.
+
+
+

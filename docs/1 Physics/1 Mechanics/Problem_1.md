@@ -79,8 +79,6 @@ Projectile motion isn't just theoretical—we experience it in our daily lives:
 
 Projectile motion is commonly observed in sports, especially football. When a player kicks the ball at an angle, it follows a **parabolic trajectory** due to gravity—just like the theoretical models we study.
 
-![Football Kick Trajectory](football_kick_trajectory.png)
-
 ####  **Key Insights from This Example:**
 - The football behaves like a projectile, launched with an initial velocity and angle.
 - The range of the kick depends on the angle of projection, just like in our model.
