@@ -193,6 +193,37 @@ Period (T): 2.0270 s
 g = 9.59 ± 0.10 m/s²
 ```
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample data
+times_10_oscillations = np.array([20.3, 20.2, 20.4, 20.1, 20.3, 20.3, 20.2, 20.4, 20.3, 20.2])
+
+# Calculate period for each trial
+periods = times_10_oscillations / 10
+
+# Calculate g for each trial
+L = 1.00  # pendulum length in meters
+g_values = (4 * np.pi**2 * L) / (periods**2)
+
+# Plotting
+plt.figure(figsize=(8, 5))
+plt.plot(range(1, 11), g_values, marker='o', linestyle='-', label='Estimated $g$')
+plt.axhline(9.81, color='green', linestyle='--', label='Standard $g = 9.81$ m/s²')
+plt.title("Gravitational Acceleration Estimates from Pendulum Trials")
+plt.xlabel("Trial Number")
+plt.ylabel("Estimated $g$ (m/s²)")
+plt.ylim(9.4, 9.9)
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+![gravitational-acce](Unknown-27.png)
+
+
+
 ## Deliverables
 
 - Tabulated trial data
