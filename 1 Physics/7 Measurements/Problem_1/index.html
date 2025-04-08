@@ -172,6 +172,187 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="measuring-earths-gravitational-acceleration-with-a-pendulum">Measuring Earth's Gravitational Acceleration with a Pendulum</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The acceleration due to gravity <span class="arithmatex">\(g\)</span> is a crucial physical constant influencing various phenomena from falling objects to satellite orbits. A classic method for estimating <span class="arithmatex">\(g\)</span> is using a <strong>simple pendulum</strong>, where the period of oscillation is directly related to the length of the pendulum and the local gravitational acceleration.</p>
+<p>This experiment focuses on:</p>
+<ul>
+<li>
+<p>Careful measurement of pendulum parameters</p>
+</li>
+<li>
+<p>Statistical analysis of repeated trials</p>
+</li>
+<li>
+<p>Propagation of uncertainties</p>
+</li>
+</ul>
+<h2 id="materials">Materials</h2>
+<ul>
+<li>
+<p>A string (1.00–1.50 meters)</p>
+</li>
+<li>
+<p>A small mass (e.g., keychain, bag of coins)</p>
+</li>
+<li>
+<p>Stopwatch or smartphone timer</p>
+</li>
+<li>
+<p>Ruler or measuring tape (resolution: ±0.5 cm or ±0.01 m)</p>
+</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<ol>
+<li>
+<p>Attach the mass to the string and suspend it from a fixed point.</p>
+</li>
+<li>
+<p>Measure the <strong>length</strong> <span class="arithmatex">\(L\)</span> of the pendulum (from the suspension point to the center of the mass).</p>
+</li>
+<li>
+<p>Example: <span class="arithmatex">\(<span class="arithmatex">\(L = 1.00 \pm 0.01 \text{ m}\)</span>\)</span></p>
+</li>
+<li>The uncertainty in length <span class="arithmatex">\(\delta L\)</span> is half the resolution of your ruler.</li>
+</ol>
+<h2 id="data-collection">Data Collection</h2>
+<p>Displace the pendulum by <span class="arithmatex">\(&lt;15°\)</span> and release it. Measure the time for <strong>10 complete oscillations</strong>, and repeat this <strong>10 times</strong>:</p>
+<h3 id="example-table">Example Table</h3>
+<table>
+<thead>
+<tr>
+<th>Trial</th>
+<th>Time for 10 Oscillations (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>20.3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20.2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>20.4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>20.1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>20.3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>20.3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>20.2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>20.4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>20.3</td>
+</tr>
+<tr>
+<td>10</td>
+<td>20.2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="statistical-analysis">Statistical Analysis</h2>
+<h3 id="mean-time-for-10-oscillations">Mean time for 10 oscillations:</h3>
+<div class="arithmatex">\[
+\bar{t}_{10} = \frac{\sum t_i}{10} = 20.27 \text{ s}
+\]</div>
+<h3 id="standard-deviation">Standard deviation:</h3>
+<div class="arithmatex">\[
+s = \sqrt{\frac{1}{n - 1} \sum (t_i - \bar{t})^2} \approx 0.1 \text{ s}
+\]</div>
+<h3 id="uncertainty-in-the-mean-time">Uncertainty in the mean time:</h3>
+<div class="arithmatex">\[
+\delta \bar{t}_{10} = \frac{s}{\sqrt{n}} = \frac{0.1}{\sqrt{10}} \approx 0.03 \text{ s}
+\]</div>
+<h2 id="calculations">Calculations</h2>
+<h3 id="1-period-of-one-oscillation">1. Period of one oscillation:</h3>
+<div class="arithmatex">\[
+T = \frac{\bar{t}_{10}}{10} = 2.027 \text{ s}
+\]</div>
+<div class="arithmatex">\[
+\delta T = \frac{\delta \bar{t}_{10}}{10} = 0.003 \text{ s}
+\]</div>
+<h3 id="2-calculate-g">2. Calculate <span class="arithmatex">\(g\)</span>:</h3>
+<div class="arithmatex">\[
+T = 2\pi \sqrt{\frac{L}{g}} \Rightarrow g = \frac{4\pi^2 L}{T^2}
+\]</div>
+<div class="arithmatex">\[
+g = \frac{4\pi^2 \cdot 1.00}{(2.027)^2} \approx 9.59 \text{ m/s}^2
+\]</div>
+<h2 id="uncertainty-in-g">Uncertainty in <span class="arithmatex">\(g\)</span></h2>
+<p>Use propagation of uncertainty:</p>
+<div class="arithmatex">\[
+\frac{\delta g}{g} = \sqrt{\left(\frac{\delta L}{L}\right)^2 + \left(2 \cdot \frac{\delta T}{T}\right)^2}
+\]</div>
+<div class="arithmatex">\[
+\frac{\delta g}{g} = \sqrt{\left(\frac{0.01}{1.00}\right)^2 + \left(2 \cdot \frac{0.003}{2.027}\right)^2} \approx 0.010
+\]</div>
+<div class="arithmatex">\[
+\delta g = 9.59 \cdot 0.010 = 0.10 \text{ m/s}^2
+\]</div>
+<h2 id="final-result">Final Result</h2>
+<div class="arithmatex">\[
+\boxed{g = 9.59 \pm 0.10 \text{ m/s}^2}
+\]</div>
+<h2 id="analysis">Analysis</h2>
+<h3 id="1-comparison-with-standard-value">1. Comparison with standard value:</h3>
+<ul>
+<li>
+<p>Standard gravitational acceleration: <span class="arithmatex">\(9.81 \text{ m/s}^2\)</span></p>
+</li>
+<li>
+<p>Measured value: <span class="arithmatex">\(9.59 \pm 0.10 \text{ m/s}^2\)</span></p>
+</li>
+<li>
+<p>Slight deviation can be attributed to timing uncertainties, air resistance, and string stiffness.</p>
+</li>
+</ul>
+<h3 id="2-discussion-of-uncertainties">2. Discussion of Uncertainties:</h3>
+<ul>
+<li>
+<p><strong>Length uncertainty</strong>: From resolution of measuring tape.</p>
+</li>
+<li>
+<p><strong>Timing uncertainty</strong>: Due to human reaction time (~0.1 s typical).</p>
+</li>
+<li>
+<p><strong>Experimental conditions</strong>: Small angle approximation must be valid; avoid large swings.</p>
+</li>
+</ul>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>
+<p>Tabulated trial data</p>
+</li>
+<li>
+<p>Calculated mean, standard deviation, and uncertainties</p>
+</li>
+<li>
+<p>Final value for <span class="arithmatex">\(g\)</span> with uncertainty</p>
+</li>
+<li>
+<p>Discussion of sources of error</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>By measuring the period of a simple pendulum and analyzing uncertainties rigorously, we estimated <span class="arithmatex">\(g\)</span> with good accuracy. This classical experiment remains an excellent example of experimental physics in action.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
