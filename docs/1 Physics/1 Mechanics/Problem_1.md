@@ -16,6 +16,7 @@
 A **projectile** is any object thrown into the air that moves under the force of **gravity only** (we ignore air resistance here).
 
 Examples:
+
 - A basketball shot
 
 - A soccer pass
@@ -26,7 +27,7 @@ Examples:
 
 ## What is Range?
 
-- The **range** is the **total horizontal distance** the projectile travels across the ground **before hitting the ground again**.
+The **range** is the **total horizontal distance** the projectile travels across the ground **before hitting the ground again**.
   
 $$
 \text{Range} = \text{Horizontal speed} \times \text{Time of flight}
@@ -39,13 +40,13 @@ $$
 Projectile motion has **two parts**:
 
 ### Horizontal Motion
-- Speed: $$v_x = v_0 \cos \theta$$
+- Speed: $v_x = v_0 \cos \theta$
 
 - No forces act horizontally → speed stays constant.
 
 ### Vertical Motion
 
-- Speed: $$v_y = v_0 \sin \theta$$
+- Speed: $v_y = v_0 \sin \theta$
 
 - Gravity acts downward → object goes up and then comes down.
 
@@ -102,7 +103,7 @@ Final formula tells us:
 
 
 
-## 📌 Key Observations
+## Key Observations
 
 - Maximum range at **45°**
 
@@ -112,14 +113,16 @@ Final formula tells us:
 
 - Range increases with square of speed:
 
-  - Double the speed → 4 times the range
+  Double the speed → 4 times the range
 
 
 
 ##  Real-World Examples
 
 - Athletes often aim around 45° for maximum throw.
+
 - Artillery and rockets use this physics in their targeting.
+
 - In real life, air resistance **would reduce** the range.
 
 
@@ -129,7 +132,8 @@ Final formula tells us:
 - **Range** depends on **initial speed**, **launch angle**, and **gravity**.
 
 - **45°** is the ideal launch angle for max range (with no air resistance).
-- The formula $$R = \frac{v_0^2 \sin 2\theta}{g}$$ summarizes everything.
+
+- The formula $R = \frac{v_0^2 \sin 2\theta}{g}$ summarizes everything.
 
 
 
