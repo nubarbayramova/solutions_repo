@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Projectile Range and Launch Angle - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Projectile Range and Launch Angle";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,25 +46,33 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Projectile Range and Launch Angle</a>
 <ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#governing-equation">Governing Equation</a>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-projectile">What is a Projectile?</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#python-implementation">Python Implementation</a>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-range">What is Range?</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#observations">Observations</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#real-world-applications">Real-World Applications</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#kicking-a-football">Kicking a Football</a>
+<li class="toctree-l3"><a class="reference internal" href="#horizontal-and-vertical-motion">Horizontal and Vertical Motion</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#key-insights-from-this-example">Key Insights from This Example:</a>
+<li class="toctree-l4"><a class="reference internal" href="#horizontal-motion">Horizontal Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#vertical-motion">Vertical Motion</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#further-exploration">Further Exploration</a>
+<li class="toctree-l3"><a class="reference internal" href="#time-of-flight">Time of Flight</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#range-formula">Range Formula</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#graph-range-vs-launch-angle">Graph: Range vs. Launch Angle</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#key-observations">📌 Key Observations</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#real-world-examples">Real-World Examples</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
 </li>
 </ul>
 </li>
@@ -181,7 +189,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Projectile Range and Launch Angle</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -189,96 +197,141 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="projectile-range-and-launch-angle">Projectile Range and Launch Angle</h1>
 <h2 id="introduction">Introduction</h2>
-<p>Projectile motion is a fundamental concept in mechanics. In this problem, we analyze how the <strong>range</strong> of a projectile depends on the <strong>angle of projection</strong>. </p>
-<h2 id="governing-equation">Governing Equation</h2>
-<p>The range <span class="arithmatex">\(R\)</span> of a projectile launched with an initial velocity <span class="arithmatex">\(v_0\)</span> at an angle <span class="arithmatex">\(θ\)</span> (with respect to the horizontal) is given by:</p>
+<ul>
+<li>
+<p>In this presentation, we explore <strong>how far a projectile travels</strong> depending on the <strong>angle</strong> it is launched.</p>
+</li>
+<li>
+<p>This distance is called the <strong>range</strong>.</p>
+</li>
+<li>
+<p>We focus on <strong>ideal conditions</strong> — no air resistance, starting and landing on the same level.</p>
+</li>
+</ul>
+<h2 id="what-is-a-projectile">What is a Projectile?</h2>
+<p>A <strong>projectile</strong> is any object thrown into the air that moves under the force of <strong>gravity only</strong> (we ignore air resistance here).</p>
+<p>Examples:
+- A basketball shot</p>
+<ul>
+<li>
+<p>A soccer pass</p>
+</li>
+<li>
+<p>A cannonball</p>
+</li>
+</ul>
+<h2 id="what-is-range">What is Range?</h2>
+<ul>
+<li>The <strong>range</strong> is the <strong>total horizontal distance</strong> the projectile travels across the ground <strong>before hitting the ground again</strong>.</li>
+</ul>
 <div class="arithmatex">\[
-R = \frac{v_0^2 \sin(2\theta)}{g}
+\text{Range} = \text{Horizontal speed} \times \text{Time of flight}
 \]</div>
-<p>where:</p>
-<ul>
-<li><span class="arithmatex">\(v_0\)</span> is the initial velocity (m/s),</li>
-<li><span class="arithmatex">\(θ\)</span> is the launch angle (degrees),</li>
-<li><span class="arithmatex">\(g\)</span>  is the acceleration due to gravity (m/s²).</li>
-</ul>
-<h2 id="python-implementation"><strong>Python Implementation</strong></h2>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-def projectile_range(v0, theta, g=9.81):
-    """
-    Computes the range of a projectile given initial velocity and launch angle.
-    :param v0: Initial velocity (m/s)
-    :param theta: Launch angle (degrees)
-    :param g: Acceleration due to gravity (m/s^2), default is Earth's gravity
-    :return: Range of the projectile (meters)
-    """
-    theta_rad = np.radians(theta)  # Convert angle to radians
-    return (v0**2 * np.sin(2 * theta_rad)) / g
-
-# Simulation parameters
-angles = np.linspace(0, 90, 100)  # Angles from 0 to 90 degrees
-initial_velocities = [10, 20, 30]  # Different initial velocities
-
-g = 9.81  # Gravity (m/s^2)
-
-# Plot range vs. angle for different velocities
-plt.figure(figsize=(8, 6))
-for v0 in initial_velocities:
-    ranges = [projectile_range(v0, theta, g) for theta in angles]
-    plt.plot(angles, ranges, label=f'v0 = {v0} m/s')
-
-plt.xlabel('Launch Angle (degrees)')
-plt.ylabel('Range (meters)')
-plt.title('Projectile Range as a Function of Launch Angle')
-plt.legend()
-plt.grid()
-plt.show()
-</code></pre>
-<p><img alt="alt text" src="../projectile_range_graph.png"/></p>
-<h2 id="observations"><strong>Observations</strong></h2>
-<ul>
-<li>The maximum range occurs at <strong>45°</strong>.</li>
-<li>The same range is achieved for two complementary angles (e.g., <span class="arithmatex">\(30°\)</span> and <span class="arithmatex">\(60°\)</span>).</li>
-<li>Increasing <strong>initial velocity</strong> increases the range.</li>
-<li>Increasing <strong>gravity</strong> decreases the range.</li>
-</ul>
-<h2 id="real-world-applications"><strong>Real-World Applications</strong></h2>
-<p>Projectile motion isn't just theoretical—we experience it in our daily lives:</p>
+<h2 id="horizontal-and-vertical-motion">Horizontal and Vertical Motion</h2>
+<p>Projectile motion has <strong>two parts</strong>:</p>
+<h3 id="horizontal-motion">Horizontal Motion</h3>
 <ul>
 <li>
-<p><strong>Sports:</strong> Kicking a football, throwing a javelin</p>
+<p>Speed: <span class="arithmatex">\(<span class="arithmatex">\(v_x = v_0 \cos \theta\)</span>\)</span></p>
 </li>
 <li>
-<p><strong>Engineering:</strong> Launching rockets or artillery</p>
-</li>
-<li>
-<p><strong>Science:</strong> Simulating motion on Earth, Moon, or Mars</p>
+<p>No forces act horizontally → speed stays constant.</p>
 </li>
 </ul>
-<h2 id="kicking-a-football"><strong>Kicking a Football</strong></h2>
-<p>Projectile motion is commonly observed in sports, especially football. When a player kicks the ball at an angle, it follows a <strong>parabolic trajectory</strong> due to gravity—just like the theoretical models we study.</p>
-<h4 id="key-insights-from-this-example"><strong>Key Insights from This Example:</strong></h4>
+<h3 id="vertical-motion">Vertical Motion</h3>
 <ul>
-<li>The football behaves like a projectile, launched with an initial velocity and angle.</li>
-<li>The range of the kick depends on the angle of projection, just like in our model.</li>
-<li>A kick at around <strong>45°</strong> will typically result in the <strong>maximum horizontal distance</strong>.</li>
-<li>This concept helps athletes and coaches improve technique and optimize performance.</li>
+<li>
+<p>Speed: <span class="arithmatex">\(<span class="arithmatex">\(v_y = v_0 \sin \theta\)</span>\)</span></p>
+</li>
+<li>
+<p>Gravity acts downward → object goes up and then comes down.</p>
+</li>
 </ul>
-<h2 id="further-exploration"><strong>Further Exploration</strong></h2>
-<p>Future studies and simulations could consider:</p>
+<h2 id="time-of-flight">Time of Flight</h2>
+<p>To calculate how long the projectile is in the air:</p>
+<div class="arithmatex">\[
+t = \frac{2v_0 \sin \theta}{g}
+\]</div>
 <ul>
 <li>
-<p><strong>Air Resistance:</strong> The influence of drag on real-world motion.</p>
+<p>More upward speed → longer flight.</p>
 </li>
 <li>
-<p><strong>Uneven Terrain:</strong> Effects of launching from different heights.</p>
+<p>Symmetrical: same time up and down.</p>
+</li>
+</ul>
+<h2 id="range-formula">Range Formula</h2>
+<p>Start with:
+$$
+R = v_x \times t = v_0 \cos \theta \times \frac{2v_0 \sin \theta}{g}
+$$</p>
+<p>Now simplify:</p>
+<div class="arithmatex">\[
+R = \frac{v_0^2 \sin 2\theta}{g}
+\]</div>
+<p>Final formula tells us:</p>
+<ul>
+<li>
+<p>Range depends on <strong>speed squared</strong>,</p>
 </li>
 <li>
-<p><strong>Gravity Variations:</strong> Comparing motion on the <strong>Moon, Earth, and Mars</strong>.</p>
+<p><strong>Launch angle</strong> through <span class="arithmatex">\(\sin 2\theta\)</span>,</p>
 </li>
+<li>
+<p>And <strong>gravity</strong>.</p>
+</li>
+</ul>
+<h2 id="graph-range-vs-launch-angle">Graph: Range vs. Launch Angle</h2>
+<blockquote>
+<p>This graph shows how range changes depending on the launch angle:</p>
+</blockquote>
+<ul>
+<li>
+<p>The <strong>peak</strong> is at <strong>45°</strong></p>
+</li>
+<li>
+<p>Range is the <strong>same</strong> at <strong>30° and 60°</strong></p>
+</li>
+<li>
+<p>At <strong>0° and 90°</strong>, the range is zero.</p>
+</li>
+</ul>
+<p><img alt="Range vs Angle Graph" src="../ChatGPT%20Image.png"/></p>
+<h2 id="key-observations">📌 Key Observations</h2>
+<ul>
+<li>
+<p>Maximum range at <strong>45°</strong></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\sin 2\theta\)</span> causes <strong>symmetry</strong> in the graph:</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\theta = 30^\circ\)</span> and <span class="arithmatex">\(\theta = 60^\circ\)</span> → same range</p>
+</li>
+<li>
+<p>Range increases with square of speed:</p>
+</li>
+<li>
+<p>Double the speed → 4 times the range</p>
+</li>
+</ul>
+<h2 id="real-world-examples">Real-World Examples</h2>
+<ul>
+<li>Athletes often aim around 45° for maximum throw.</li>
+<li>Artillery and rockets use this physics in their targeting.</li>
+<li>In real life, air resistance <strong>would reduce</strong> the range.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>
+<p><strong>Range</strong> depends on <strong>initial speed</strong>, <strong>launch angle</strong>, and <strong>gravity</strong>.</p>
+</li>
+<li>
+<p><strong>45°</strong> is the ideal launch angle for max range (with no air resistance).</p>
+</li>
+<li>The formula <span class="arithmatex">\(<span class="arithmatex">\(R = \frac{v_0^2 \sin 2\theta}{g}\)</span>\)</span> summarizes everything.</li>
 </ul>
 </div>
 </div><footer>
