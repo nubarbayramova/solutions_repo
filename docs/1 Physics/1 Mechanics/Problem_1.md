@@ -1,99 +1,139 @@
-# Problem 1
 
-## Introduction
-Projectile motion is a fundamental concept in mechanics. In this problem, we analyze how the **range** of a projectile depends on the **angle of projection**. 
+# Projectile Range and Launch Angle
 
-## Governing Equation
-The range $R$ of a projectile launched with an initial velocity $v_0$ at an angle $θ$ (with respect to the horizontal) is given by:
+
+##  Introduction
+
+- In this presentation, we explore **how far a projectile travels** depending on the **angle** it is launched.
+
+- This distance is called the **range**.
+
+- We focus on **ideal conditions** — no air resistance, starting and landing on the same level.
+
+
+##  What is a Projectile?
+
+A **projectile** is any object thrown into the air that moves under the force of **gravity only** (we ignore air resistance here).
+
+Examples:
+- A basketball shot
+
+- A soccer pass
+
+- A cannonball
+
+
+
+## What is Range?
+
+- The **range** is the **total horizontal distance** the projectile travels across the ground **before hitting the ground again**.
+  
+$$
+\text{Range} = \text{Horizontal speed} \times \text{Time of flight}
+$$
+
+
+
+## Horizontal and Vertical Motion
+
+Projectile motion has **two parts**:
+
+### Horizontal Motion
+- Speed: $$v_x = v_0 \cos \theta$$
+
+- No forces act horizontally → speed stays constant.
+
+### Vertical Motion
+
+- Speed: $$v_y = v_0 \sin \theta$$
+
+- Gravity acts downward → object goes up and then comes down.
+
+
+
+## Time of Flight
+
+To calculate how long the projectile is in the air:
 
 $$
-R = \frac{v_0^2 \sin(2\theta)}{g}
+t = \frac{2v_0 \sin \theta}{g}
 $$
 
-where:
+- More upward speed → longer flight.
 
-- $v_0$ is the initial velocity (m/s),
-- $θ$ is the launch angle (degrees),
-- $g$  is the acceleration due to gravity (m/s²).
+- Symmetrical: same time up and down.
 
 
 
-## **Python Implementation**
+## Range Formula 
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
+Start with:
+$$
+R = v_x \times t = v_0 \cos \theta \times \frac{2v_0 \sin \theta}{g}
+$$
 
-def projectile_range(v0, theta, g=9.81):
-    """
-    Computes the range of a projectile given initial velocity and launch angle.
-    :param v0: Initial velocity (m/s)
-    :param theta: Launch angle (degrees)
-    :param g: Acceleration due to gravity (m/s^2), default is Earth's gravity
-    :return: Range of the projectile (meters)
-    """
-    theta_rad = np.radians(theta)  # Convert angle to radians
-    return (v0**2 * np.sin(2 * theta_rad)) / g
+Now simplify:
 
-# Simulation parameters
-angles = np.linspace(0, 90, 100)  # Angles from 0 to 90 degrees
-initial_velocities = [10, 20, 30]  # Different initial velocities
+$$
+R = \frac{v_0^2 \sin 2\theta}{g}
+$$
 
-g = 9.81  # Gravity (m/s^2)
+Final formula tells us:
 
-# Plot range vs. angle for different velocities
-plt.figure(figsize=(8, 6))
-for v0 in initial_velocities:
-    ranges = [projectile_range(v0, theta, g) for theta in angles]
-    plt.plot(angles, ranges, label=f'v0 = {v0} m/s')
+- Range depends on **speed squared**,
 
-plt.xlabel('Launch Angle (degrees)')
-plt.ylabel('Range (meters)')
-plt.title('Projectile Range as a Function of Launch Angle')
-plt.legend()
-plt.grid()
-plt.show()
-```
-![alt text](projectile_range_graph.png)
+- **Launch angle** through $\sin 2\theta$,
+
+- And **gravity**.
 
 
-## **Observations**
-- The maximum range occurs at **45°**.
-- The same range is achieved for two complementary angles (e.g., $30°$ and $60°$).
-- Increasing **initial velocity** increases the range.
-- Increasing **gravity** decreases the range.
+##  Graph: Range vs. Launch Angle
 
-##  **Real-World Applications**
-Projectile motion isn't just theoretical—we experience it in our daily lives:
+> This graph shows how range changes depending on the launch angle:
 
-- **Sports:** Kicking a football, throwing a javelin
+- The **peak** is at **45°**
 
-- **Engineering:** Launching rockets or artillery
+- Range is the **same** at **30° and 60°**
 
-- **Science:** Simulating motion on Earth, Moon, or Mars
+- At **0° and 90°**, the range is zero.
+
+
+![Range vs Angle Graph](ChatGPT%20Image.png)
 
 
 
-## **Kicking a Football**
+## 📌 Key Observations
+
+- Maximum range at **45°**
+
+- $\sin 2\theta$ causes **symmetry** in the graph:
+
+  - $\theta = 30^\circ$ and $\theta = 60^\circ$ → same range
+
+- Range increases with square of speed:
+
+  - Double the speed → 4 times the range
 
 
-Projectile motion is commonly observed in sports, especially football. When a player kicks the ball at an angle, it follows a **parabolic trajectory** due to gravity—just like the theoretical models we study.
 
-####  **Key Insights from This Example:**
-- The football behaves like a projectile, launched with an initial velocity and angle.
-- The range of the kick depends on the angle of projection, just like in our model.
-- A kick at around **45°** will typically result in the **maximum horizontal distance**.
-- This concept helps athletes and coaches improve technique and optimize performance.
+##  Real-World Examples
 
+- Athletes often aim around 45° for maximum throw.
+- Artillery and rockets use this physics in their targeting.
+- In real life, air resistance **would reduce** the range.
 
 
-## **Further Exploration**
-Future studies and simulations could consider:
 
--  **Air Resistance:** The influence of drag on real-world motion.
+## Conclusion
 
-- **Uneven Terrain:** Effects of launching from different heights.
+- **Range** depends on **initial speed**, **launch angle**, and **gravity**.
 
--  **Gravity Variations:** Comparing motion on the **Moon, Earth, and Mars**.
+- **45°** is the ideal launch angle for max range (with no air resistance).
+- The formula $$R = \frac{v_0^2 \sin 2\theta}{g}$$ summarizes everything.
+
+
+
+
+
 
 
