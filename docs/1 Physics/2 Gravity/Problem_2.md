@@ -17,6 +17,13 @@ $$
 v_1 = \sqrt{\frac{G M}{r}}
 $$
 
+**Derivation**:  
+
+Equating gravitational force to centripetal force:
+
+$$
+\frac{G M m}{r^2} = \frac{m v^2}{r} \Rightarrow v_1 = \sqrt{\frac{G M}{r}}
+$$
 
 
 ### Second Cosmic Velocity (Escape Velocity)
@@ -25,6 +32,15 @@ $$
 v_2 = \sqrt{2} \cdot v_1 = \sqrt{\frac{2 G M}{r}}
 $$
 
+**Derivation**:  
+
+From energy conservation:  
+
+Initial kinetic energy = Gravitational potential energy at surface:
+
+$$
+\frac{1}{2}mv^2 = \frac{G M m}{r} \Rightarrow v_2 = \sqrt{\frac{2 G M}{r}}
+$$
 
 
 ### Third Cosmic Velocity (Solar Escape Velocity)
@@ -33,6 +49,14 @@ $$
 - Approximate value:  
 $$
 v_3 \approx 42.1 \text{ km/s (from Earth)}
+$$
+
+**Derivation (approximate)**:  
+
+Using escape velocity from the Sun’s gravity at Earth’s orbit:
+
+$$
+v_3 = \sqrt{v_\text{sun}^2 + v_2^2} \approx \sqrt{\frac{2 G M_{\odot}}{r_\text{earth orbit}}}
 $$
 
 
